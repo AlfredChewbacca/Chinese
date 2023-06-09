@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <title>Encontre Seu Signo Chinês</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <h1>Encontre o seu <strong>signo</strong> chinês!</h1>
+    <label for="ano-nascimento">Ano de Nascimento:</label>
+    <input type="number" id="ano-nascimento" min="1900" max="2100">
+    <button id="encontrar-btn">Encontrar</button>
+    <p id="resultado"></p>
+
+    <button id="proxima-pagina-btn">Próxima Página</button>
+    
+    <script>
+        $(document).ready(function() {
+            $("#encontrar-btn").click(function() {
+                var anoNascimento = parseInt($("#ano-nascimento").val());
+                var signo = "";
+
+                switch ((anoNascimento - 4) % 12) {
+                    case 0:
+                        signo = "Rato"; 
+                        break;
+                    case 1:
+                        signo = "Boi";
+                        break;
+                    case 2:
+                        signo = "Tigre";
+                        break;
+                    case 3:
+                        signo = "Coelho";
+                        break;
+                    case 4:
+                        signo = "Dragão";
+                        break;
+                    case 5:
+                        signo = "Serpente";
+                        break;
+                    case 6:
+                        signo = "Cavalo";
+                        break;
+                    case 7:
+                        signo = "Cabra";
+                        break;
+                    case 8:
+                        signo = "Macaco";
+                        break;
+                    case 9:
+                        signo = "Galo";
+                        break;
+                    case 10:
+                        signo = "Cão";
+                        break;
+                    case 11:
+                        signo = "Porco";
+                        break;
+                    default:
+                        signo = "Ano de Nascimento Inválido";
+                }
+
+                $("#resultado").text("Seu signo do horóscopo chinês é: " + signo);
+            });
+
+            $("#proxima-pagina-btn").click(function() {
+                window.location.href = "sobremim.html";
+            });
+        });
+    </script>
+</body>
+<img src="transferir.png">
+</html>

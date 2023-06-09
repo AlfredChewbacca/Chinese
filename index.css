@@ -1,0 +1,11 @@
+*{margin: 0;
+    padding: 0;
+    }
+img{
+    width: 350px;
+}
+html{
+    background-image:url("fundo.jpg") ;
+    justify-content: center;
+    background-size: cover
+}
